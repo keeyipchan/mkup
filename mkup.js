@@ -1,6 +1,6 @@
 mkup = (function() {
 	var kSeparator = /[() ]/
-	var kSelector = /^(.*?)(#.*?)?(\..*?)?$/
+	var kSelector = /^([a-z].*?)?(#.*?)?(\..*?)?$/
 	
 	function make$FromSelector(selector)
 	{
