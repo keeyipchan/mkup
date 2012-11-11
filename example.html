@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<body>
+<script src='jquery.js'></script>
+<script src='mkup.js'></script>
+<script>
+mkup('article(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name)) .section.with-txt(textarea) .section.with-actions())', function($article)
+{
+	$article.appendTo($('body'))
+})
+</script>
+</body>
+</html>
