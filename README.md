@@ -1,5 +1,5 @@
 # mkup
-Generate dom or objects from simple one-liners.
+Generate a dom or object tree from a simple one-liner
 
 ## Needs
 * jQuery
