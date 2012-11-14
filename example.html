@@ -1,13 +1,32 @@
 <!doctype html>
 <html>
+<head>
+	<meta charset="utf-8"/>
+</head>
 <body>
 <script src='jquery.js'></script>
 <script src='mkup.js'></script>
 <script>
-mkup('article(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name)) .section.with-txt(textarea) .section.with-actions())', function($article)
-{
-	$article.appendTo($('body'))
-})
+mkup.dom('article(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name)) .section.with-txt(textarea) .section.with-actions())',
+	function($fragment) {
+		$fragment.appendTo($('body'))
+	})
+
+mkup.dom('stuff(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name) ) .section.with-txt(textarea) .section.with-actions())',
+	function($fragment) {
+		$fragment.appendTo($('body'))
+	})
+	
+mkup.obj('what(more less) article(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name)) .section.with-txt(textarea) .section.with-actions())',
+	function(obj) {
+		console.dir(obj)
+		console.log(JSON.stringify(obj))
+	})
+mkup.obj('what(more less) article(form#blah.section.with-tools(a.edit a.clone a.purge(span.your-name ) ) .section.with-txt(textarea) .section.with-actions())',
+	function(obj) {
+		console.dir(obj)
+		console.log(JSON.stringify(obj))
+	})
 </script>
 </body>
 </html>
