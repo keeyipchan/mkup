@@ -1,12 +1,18 @@
 # mkup
-Generate DOM elements from simple one-liners.
+Generate dom or objects from simple one-liners.
 
 ## Needs
 * jQuery
 
 ## How to use
-mkup.dom = function(oneliner, onFinish) returns $fragment
-mkup.obj = function(onliner, onFinish) returns Object
+<table>
+	<tr><th>mkup.dom</th><td>function (oneliner, onFinish)</td><td>returns $fragment</td></tr>
+	<tr><th>mkup.obj</th><td>function (oneliner, onFinish)</td><td>returns Object</td></tr>
+	<tr><td colspan=3>
+		<pre>mkup.obj('one(a(a1 ab2)) two(b)')</pre>
+		Result: <code>{ one:{ a:{ a1:{}, a2:{} } }, two:{ b:{} } }</code>
+	</td></tr>
+</table>
 
 ### 
 ```js
@@ -22,12 +28,12 @@ mkup.obj('what(more less) article(form#blah.section.with-tools(a.edit a.clone a.
 	})
 ```
 
-mkup.dom's selector syntax: [tag] [id] [classes]
+**mkup.dom selector syntax**: [tag] [id] [classes]
 ```js
 /^(.*?)(#.*?)?(\..*?)?$/
 ```
 
-mkup.obj's selector syntax: anything except whitespace
+**mkup.obj selector syntax**: anything except whitespace
 ```js
-\S
+/^\S+$/
 ```
